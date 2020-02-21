@@ -1,6 +1,6 @@
 # Phalcon Devtools
 
-[![Latest Version](https://img.shields.io/packagist/v/psdcompany/devtools.svg?style=flat-square)][:devtools:]
+[![Latest Version](https://img.shields.io/packagist/v/psdcompany/devtools.svg?style=flat-square)][:packagist:]
 [![Software License](https://img.shields.io/badge/license-BSD--3-brightgreen.svg?style=flat-square)][:license:]
 [![Total Downloads](https://img.shields.io/packagist/dt/psdcompany/devtools.svg?style=flat-square)][:packagist:]
 [![Daily Downloads](https://img.shields.io/packagist/dd/psdcompany/devtools.svg?style=flat-square)][:packagist:]
@@ -174,5 +174,4 @@ Phalcon Developer Tools is open source software licensed under the [New BSD Lice
 © Phalcon Framework Team and contributors
 
 [:packagist:]: https://packagist.org/packages/psdcompany/devtools
-[:devtools:]: https://github.com/PSD-Company/phalcon-devtools
 [:license:]: https://github.com/PSD-Company/phalcon-devtools/blob/master/LICENSE.txt
