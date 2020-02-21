@@ -1,105 +1,50 @@
-# Phalcon Devtools
+# Phalcon Devtools Docker
 
-[![codecov](https://codecov.io/gh/phalcon/phalcon-devtools/branch/4.0.x/graph/badge.svg)](https://codecov.io/gh/phalcon/phalcon-devtools)
-[![Latest Version](https://img.shields.io/packagist/v/phalcon/devtools.svg?style=flat-square)][:devtools:]
+[![Latest Version](https://img.shields.io/packagist/v/psdcompany/devtools.svg?style=flat-square)][:packagist:]
 [![Software License](https://img.shields.io/badge/license-BSD--3-brightgreen.svg?style=flat-square)][:license:]
-[![Total Downloads](https://img.shields.io/packagist/dt/phalcon/devtools.svg?style=flat-square)][:packagist:]
-[![Daily Downloads](https://img.shields.io/packagist/dd/phalcon/devtools.svg?style=flat-square)][:packagist:]
-[![Build Status](https://api.travis-ci.org/phalcon/phalcon-devtools.svg?branch=master)][:travis:]
+[![Total Downloads](https://img.shields.io/packagist/dt/psdcompany/devtools.svg?style=flat-square)][:packagist:]
+[![Daily Downloads](https://img.shields.io/packagist/dd/psdcompany/devtools.svg?style=flat-square)][:packagist:]
 
 ![Phalcon WebTools](https://cloud.githubusercontent.com/assets/1256298/18617851/b7d31558-7de2-11e6-83e0-30e5902af714.png)
-
 
 ## What's Phalcon?
 
 Phalcon PHP is a web framework delivered as a C extension providing high performance and lower resource consumption.
 
-## What are Devtools?
+## What are Devtools Docker?
 
 This tools provide you useful scripts to generate code helping to develop faster and easy applications that use
-with Phalcon framework.
+with Phalcon framework with docker.
 
 ## Requirements
 
 * PHP >= 7.2
 * Phalcon >= 4.0.0
 
-## Installing via Composer
+## Installing globally via Composer
 
-Install composer in a common location or in your project:
+Install composer in a common location:
 
 ```bash
 curl -s http://getcomposer.org/installer | php
 ```
 
-Create the composer.json file as follows:
-
-```json
-{
-    "require-dev": {
-        "phalcon/devtools": "~4.0"
-    }
-}
-```
-
-If you are still using Phalcon 3.4.x, create a `composer.json` with the following instead:
-
-```json
-{
-    "require-dev": {
-        "phalcon/devtools": "^3.4"
-    }
-}
-```
-
-Run the composer installer:
+Move the `composer.phar` to you local bin directory, so it can be used globally:
 
 ```bash
-php composer.phar install
+mv composer.phar /usr/local/bin/composer
 ```
 
-## Build `.phar`
+Run compose global require:
 
-Install composer and box in a common location or in your project:
 ```bash
-curl -s http://getcomposer.org/installer | php
-bin/composer install
+composer global require psdcompany/devtools
 ```
 
-Build phar file `phalcon-devtools`
-```bash
-bin/box build -v
-chmod +xr ./phalcon.phar
-# Test it!
-php ./phalcon.phar
-```
-
-## Installation via Git
-
-Phalcon Devtools can be installed by using Git.
-
-Just clone the repo and checkout the current branch:
+Create a symlink to the program:
 
 ```bash
-cd ~
-git clone https://github.com/phalcon/phalcon-devtools.git
-cd phalcon-devtools
-```
-
-This method requires a little bit more of setup. Probably the best way would be to symlink
-the `phalcon` file to a directory in your `PATH`, so you can issue phalcon commands in each directory
-where a phalcon project resides.
-
-```bash
-cd phalcon-devtools
-ln -s $(pwd)/phalcon /usr/bin/phalcon
-chmod ugo+x /usr/bin/phalcon
-```
-
-If you get a `"phalcon: command not found"` message while creating the symlink, make an alias.
-
-```bash
-alias phalcon=/home/[USERNAME]/phalcon-devtools/phalcon
+ln -s ~/.composer/vendor/bin/phalcon /usr/local/bin/phalcon
 ```
 
 ## Usage
@@ -135,19 +80,29 @@ Available commands:
   console          (alias of: shell, psysh)
 ```
 
-## Database adapter
+## Docker configuration
 
-Should add `adapter` parameter in your `db` config file (if you use not MySQL database).
+You have to make sure your database image is running and accessible on a port. The `docker-compose.yml` For a mariadb should look like this:
 
-For PostgreSQL it will be something like:
+```yaml
+services:
+  mariadb:
+    ports:
+      - 3306:3306
+```
+
+## Database configuration
+
+You have to add the `dsn` and the `adapter` parameters to your`database` config file. The complete `database` config should look like this:
 
 ```php
 $config = [
-  'host'     => 'localhost',
+  'dsn'      => 'Server=127.0.0.1;Port=3306;Database=my_db_name;Uid=my_db_user;Pwd=my_db_user_password;'
+  'host'     => 'mariadb',
   'dbname'   => 'my_db_name',
   'username' => 'my_db_user',
   'password' => 'my_db_user_password',
-  'adapter'  => 'Postgresql'
+  'adapter'  => 'Postgresql' #Msql
 ];
 ```
 
@@ -176,7 +131,5 @@ And then you can use use `phalcon migration run` or `phalcon controller SomeClas
 Phalcon Developer Tools is open source software licensed under the [New BSD License][:license:].<br>
 © Phalcon Framework Team and contributors
 
-[:packagist:]: https://packagist.org/packages/phalcon/devtools
-[:devtools:]: https://github.com/phalcon/phalcon-devtools
-[:license:]: https://github.com/phalcon/phalcon-devtools/blob/master/LICENSE.txt
-[:travis:]: https://travis-ci.org/phalcon/phalcon-devtools
+[:packagist:]: https://packagist.org/packages/psdcompany/devtools
+[:license:]: https://github.com/PSD-Company/phalcon-devtools-docker/blob/master/LICENSE.txt

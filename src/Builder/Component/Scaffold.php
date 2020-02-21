@@ -91,16 +91,12 @@ class Scaffold extends AbstractComponent
 
         $di = new FactoryDefault();
         $di->set('db', function () use ($adapter, $config) {
-            if (is_object($config->path('database'))) {
-                $configArray = $config->path('database')->toArray();
-            } else {
-                $configArray = $config->path('database');
-            }
+            // Get the database connection:
+            $connection = $this->getDatabaseConnection();
 
             $adapterName = 'Phalcon\Db\Adapter\Pdo\\' . $adapter;
-            unset($configArray['adapter']);
-
-            return new $adapterName($configArray);
+            /** @var AbstractPdo $db */
+            return new $adapterName($connection);
         });
 
         if (empty($config->path('application.modelsDir'))) {
