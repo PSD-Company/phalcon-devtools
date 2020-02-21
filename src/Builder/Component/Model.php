@@ -134,6 +134,11 @@ class Model extends AbstractComponent
             $configArray = $config->database;
         }
 
+        $connection = $this->getDatabaseConnection();
+        
+        var_dump($connection);
+        die;
+
         // An array for use statements
         $uses = [];
 

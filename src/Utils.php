@@ -123,4 +123,11 @@ class Utils
 
         return null;
     }
+
+    /**
+     * Resolves a data source name in the database config into a config array
+     */
+    public static function resolveDsn() : ?array {
+        return (new \Phalcon\DevTools\Utils\DockerUtils())->resolveDsn();
+    }
 }

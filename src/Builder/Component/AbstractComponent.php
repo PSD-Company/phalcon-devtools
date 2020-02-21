@@ -17,6 +17,7 @@ use Phalcon\DevTools\Builder\Exception\BuilderException;
 use Phalcon\DevTools\Builder\Path;
 use Phalcon\DevTools\Script\Color;
 use Phalcon\DevTools\Validation\Validator\Namespaces;
+use Phalcon\DevTools\Utils;
 use Phalcon\Validation;
 
 /**
@@ -84,6 +85,13 @@ abstract class AbstractComponent
     protected function getConfig($type = null): Config
     {
         return $this->path->getConfig($type);
+    }
+
+    /**
+     * Tries to find the current configuration in the application
+     */
+    protected function getDatabaseConnection(): ?array {
+        return Utils::resolveDsn();
     }
 
     /**
