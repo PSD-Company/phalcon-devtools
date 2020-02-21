@@ -34,17 +34,7 @@ Create the composer.json file as follows:
 ```json
 {
     "require-dev": {
-        "phalcon/devtools": "~4.0"
-    }
-}
-```
-
-If you are still using Phalcon 3.4.x, create a `composer.json` with the following instead:
-
-```json
-{
-    "require-dev": {
-        "phalcon/devtools": "^3.4"
+        "psdcompany/devtools": "~4.0"
     }
 }
 ```
@@ -79,7 +69,7 @@ Just clone the repo and checkout the current branch:
 
 ```bash
 cd ~
-git clone https://github.com/phalcon/phalcon-devtools.git
+git clone https://github.com/PSD-Company/phalcon-devtools.git
 cd phalcon-devtools
 ```
 
@@ -131,8 +121,17 @@ Available commands:
   serve            (alias of: server)
   console          (alias of: shell, psysh)
 ```
-
 ## Database adapter
+
+Should ass `dsn` parameter in your `db` config file.
+
+It will be something like:
+
+```php
+$config = [
+  'dsn'      => 'Server=127.0.0.1;Port=3306;Database=my_db_name;Uid=my_db_user;Pwd=my_db_user_password;',
+];
+```
 
 Should add `adapter` parameter in your `db` config file (if you use not MySQL database).
 
@@ -140,7 +139,8 @@ For PostgreSQL it will be something like:
 
 ```php
 $config = [
-  'host'     => 'localhost',
+  'dsn'      => 'Server=127.0.0.1;Port=3306;Database=my_db_name;Uid=my_db_user;Pwd=my_db_user_password;'
+  'host'     => '127.0.0.1',
   'dbname'   => 'my_db_name',
   'username' => 'my_db_user',
   'password' => 'my_db_user_password',
