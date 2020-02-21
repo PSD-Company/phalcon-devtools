@@ -173,7 +173,6 @@ And then you can use use `phalcon migration run` or `phalcon controller SomeClas
 Phalcon Developer Tools is open source software licensed under the [New BSD License][:license:].<br>
 © Phalcon Framework Team and contributors
 
-[:packagist:]: https://packagist.org/packages/phalcon/devtools
-[:devtools:]: https://github.com/phalcon/phalcon-devtools
-[:license:]: https://github.com/phalcon/phalcon-devtools/blob/master/LICENSE.txt
-[:travis:]: https://travis-ci.org/phalcon/phalcon-devtools
+[:packagist:]: https://packagist.org/packages/psdcompany/devtools
+[:devtools:]: https://github.com/PSD-Company/phalcon-devtools
+[:license:]: https://github.com/PSD-Company/phalcon-devtools/blob/master/LICENSE.txt
