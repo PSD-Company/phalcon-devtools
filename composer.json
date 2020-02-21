@@ -3,7 +3,7 @@
     "type": "library",
     "description": "This tools provide you useful scripts to generate code helping to develop faster and easy applications that use with Phalcon framework.",
     "keywords": ["framework", "phalcon", "devtools", "webtools", "phar"],
-    "homepage": "https://phalcon.io",
+    "homepage": "https://psdcompany.nl",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -18,14 +18,14 @@
         },
         {
             "name": "Contributors",
-            "homepage": "https://github.com/phalcon/phalcon-devtools/graphs/contributors"
+            "homepage": "https://github.com/PSD-Company/phalcon-devtools-docker/graphs/contributors"
         }
     ],
     "support": {
-        "issues": "https://github.com/phalcon/phalcon-devtools/issues",
-        "source": "https://github.com/phalcon/phalcon-devtools",
+        "issues": "https://github.com/PSD-Company/phalcon-devtools-docker/issues",
+        "source": "https://github.com/PSD-Company/phalcon-devtools-docker",
         "forum": "https://forum.phalcon.io"
-    },
+    }, 
     "require": {
         "php": ">=7.2",
         "ext-pdo": "*",
