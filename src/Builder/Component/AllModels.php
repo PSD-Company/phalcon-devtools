@@ -93,19 +93,12 @@ class AllModels extends AbstractComponent
             $adapter = $config->database->adapter;
         }
 
-        if (is_object($config->database)) {
-            $configArray = $config->database->toArray();
-        } else {
-            $configArray = $config->database;
-        }
+        // Get the database connection:
+        $connection = $this->getDatabaseConnection();
 
         $adapterName = 'Phalcon\Db\Adapter\Pdo\\' . $adapter;
-        unset($configArray['adapter']);
-
-        /**
-         * @var \Phalcon\Db\Adapter\Pdo\AbstractPdo $db
-         */
-        $db = new $adapterName($configArray);
+        /** @var AbstractPdo $db */
+        $db = new $adapterName($connection);
 
         if ($this->options->has('schema')) {
             $schema = $this->options->get('schema');

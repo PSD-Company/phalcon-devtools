@@ -13,27 +13,45 @@ declare(strict_types=1);
 namespace Phalcon\DevTools\Utils;
 
 use Phalcon\Config;
-use Phalcon\Di\Injectable;
 
 /**
  * @property Config $config
  */
-class DockerUtils extends Injectable
+class DockerUtils
 {
+    /** 
+     * Constant to define the mapping from a dsn to a database config
+     */
+    private const CONFIG_MAP = [
+        'Server'    => 'host',
+        'Port'      => 'port',
+        'Database'  => 'dbname',
+        'Uid'       => 'username',
+        'Pwd'       => 'password',
+    ];
+
     /**
      * Resolves a data source name in the database config into a config array
      */
-    public function resolveDsn() : ?array {
-        // Make sure config has database:
-        if (!$this->config->offsetExists('database')) return null;
-        // Get the database config:
-        $config = $this->config->get('database');
-        // Make sure config has dsn or return the normal database config:
-        if (!$config->offsetExists('dsn')) return $config->toArray();
-        // Get the dsn:
-        $dsn = $this->config->get('dsn');
-        
-        var_dump($dsn);
-        die;
+    public function resolveDsn(Config $config) : ?array {
+        // Make sure the config contains the database node and assign it:
+        if (is_null($config = $config->get('database'))) return null;
+        // Get the config  array from the config:
+        $configArray = $config->toArray();
+        // Make sure the config contains the dsn node and assign it:
+        if (is_null($config = $config->get('dsn'))) return $configArray;
+        // Loop over the subjects in the dsn:
+        foreach (explode(';', $config) as $subject) {
+            // Make sure the subject is valid:
+            if (is_null($subject) || empty($subject)) continue;
+            // Get the parts of the subject:
+            $parts = explode('=', $subject);
+            // Map and assign the subject:
+            $configArray[self::CONFIG_MAP[$parts[0]]] = $parts[1];
+        }
+        // Remove the dsn from the config array:
+        unset($configArray['dsn']);
+        // Return the config array:
+        return $configArray;
     }
 }

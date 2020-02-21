@@ -91,7 +91,7 @@ abstract class AbstractComponent
      * Tries to find the current configuration in the application
      */
     protected function getDatabaseConnection(): ?array {
-        return Utils::resolveDsn();
+        return Utils::resolveDsn($this->getConfig());
     }
 
     /**

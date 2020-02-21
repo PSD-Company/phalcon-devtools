@@ -128,24 +128,15 @@ class Model extends AbstractComponent
             $adapter = $config->database->adapter;
         }
 
-        if (is_object($config->database)) {
-            $configArray = $config->database->toArray();
-        } else {
-            $configArray = $config->database;
-        }
-
+        // Get the database connection:
         $connection = $this->getDatabaseConnection();
         
-        var_dump($connection);
-        die;
-
         // An array for use statements
         $uses = [];
 
         $adapterName = 'Phalcon\Db\Adapter\Pdo\\' . $adapter;
-        unset($configArray['adapter']);
         /** @var AbstractPdo $db */
-        $db = new $adapterName($configArray);
+        $db = new $adapterName($connection);
 
         $initialize = [];
 
