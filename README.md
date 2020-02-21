@@ -1,14 +1,11 @@
 # Phalcon Devtools
 
-[![codecov](https://codecov.io/gh/phalcon/phalcon-devtools/branch/4.0.x/graph/badge.svg)](https://codecov.io/gh/phalcon/phalcon-devtools)
-[![Latest Version](https://img.shields.io/packagist/v/phalcon/devtools.svg?style=flat-square)][:devtools:]
+[![Latest Version](https://img.shields.io/packagist/v/psdcompany/devtools.svg?style=flat-square)][:devtools:]
 [![Software License](https://img.shields.io/badge/license-BSD--3-brightgreen.svg?style=flat-square)][:license:]
-[![Total Downloads](https://img.shields.io/packagist/dt/phalcon/devtools.svg?style=flat-square)][:packagist:]
-[![Daily Downloads](https://img.shields.io/packagist/dd/phalcon/devtools.svg?style=flat-square)][:packagist:]
-[![Build Status](https://api.travis-ci.org/phalcon/phalcon-devtools.svg?branch=master)][:travis:]
+[![Total Downloads](https://img.shields.io/packagist/dt/psdcompany/devtools.svg?style=flat-square)][:packagist:]
+[![Daily Downloads](https://img.shields.io/packagist/dd/psdcompany/devtools.svg?style=flat-square)][:packagist:]
 
 ![Phalcon WebTools](https://cloud.githubusercontent.com/assets/1256298/18617851/b7d31558-7de2-11e6-83e0-30e5902af714.png)
-
 
 ## What's Phalcon?
 
