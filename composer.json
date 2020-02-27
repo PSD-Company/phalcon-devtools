@@ -18,12 +18,12 @@
         },
         {
             "name": "Contributors",
-            "homepage": "https://github.com/PSD-Company/phalcon-devtools-docker/graphs/contributors"
+            "homepage": "https://github.com/psdcompany/phalcon-devtools-docker/graphs/contributors"
         }
     ],
     "support": {
-        "issues": "https://github.com/PSD-Company/phalcon-devtools-docker/issues",
-        "source": "https://github.com/PSD-Company/phalcon-devtools-docker",
+        "issues": "https://github.com/psdcompany/phalcon-devtools-docker/issues",
+        "source": "https://github.com/psdcompany/phalcon-devtools-docker",
         "forum": "https://forum.phalcon.io"
     }, 
     "require": {

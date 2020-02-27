@@ -1,9 +1,9 @@
 # Phalcon Devtools Docker
 
-[![Latest Version](https://img.shields.io/packagist/v/psdcompany/devtools.svg?style=flat-square)][:packagist:]
+[![Latest Version](https://img.shields.io/packagist/v/psdcompany/phalcon-devtools.svg?style=flat-square)][:packagist:]
 [![Software License](https://img.shields.io/badge/license-BSD--3-brightgreen.svg?style=flat-square)][:license:]
-[![Total Downloads](https://img.shields.io/packagist/dt/psdcompany/devtools.svg?style=flat-square)][:packagist:]
-[![Daily Downloads](https://img.shields.io/packagist/dd/psdcompany/devtools.svg?style=flat-square)][:packagist:]
+[![Total Downloads](https://img.shields.io/packagist/dt/psdcompany/phalcon-devtools.svg?style=flat-square)][:packagist:]
+[![Daily Downloads](https://img.shields.io/packagist/dd/psdcompany/phalcon-devtools.svg?style=flat-square)][:packagist:]
 
 ![Phalcon WebTools](https://cloud.githubusercontent.com/assets/1256298/18617851/b7d31558-7de2-11e6-83e0-30e5902af714.png)
 
@@ -131,5 +131,5 @@ And then you can use use `phalcon migration run` or `phalcon controller SomeClas
 Phalcon Developer Tools is open source software licensed under the [New BSD License][:license:].<br>
 © Phalcon Framework Team and contributors
 
-[:packagist:]: https://packagist.org/packages/psdcompany/devtools
-[:license:]: https://github.com/PSD-Company/phalcon-devtools-docker/blob/master/LICENSE.txt
+[:packagist:]: https://packagist.org/packages/psdcompany/phalcon-devtools
+[:license:]: https://github.com/psdcompany/phalcon-devtools-docker/blob/master/LICENSE.txt
