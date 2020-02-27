@@ -132,4 +132,4 @@ Phalcon Developer Tools is open source software licensed under the [New BSD Lice
 © Phalcon Framework Team and contributors
 
 [:packagist:]: https://packagist.org/packages/psdcompany/devtools
-[:license:]: https://github.com/PSD-Company/phalcon-devtools-docker/blob/master/LICENSE.txt
+[:license:]: https://github.com/psdcompany/phalcon-devtools-docker/blob/master/LICENSE.txt
